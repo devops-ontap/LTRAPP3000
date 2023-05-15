@@ -12,17 +12,17 @@ Configure Cisco SMART Licensing for the Smart Account and Virtual Accounts for m
 
 Students will perform the following steps upon entering lab:
 
-- - [] Open Intellij IDE and Terminal
-- - [] Open the LTRAPP3000 directory (The lab participant will have full access to this directory for lab work and git)
-- - [] Open the above directory via Terminal
+- [] Open Intellij IDE and Terminal
+- [] Open the LTRAPP3000 directory (The lab participant will have full access to this directory for lab work and git)
+- [] Open the above directory via Terminal
 $cd LTRAPP3000
-- - [] Create a directory
+- [] Create a directory
 $mkdir lab-keys
-- - [] exist out of this directory to the root of LTRAPP300 dir
+- [] exist out of this directory to the root of LTRAPP300 dir
 $cd ../
-- - [] Clone git repo (instructor will provide repo link to participants)
+- [] Clone git repo (instructor will provide repo link to participants)
 $git clone git@github.com:devops-ontap/sdwan.git --config core.sshCommand="ssh -i ~/.ssh/sconrod-tester"
-- - [] Checkout Branch - Instructor will assign you a pre-provisioned branch to work in
+- [] Checkout Branch - Instructor will assign you a pre-provisioned branch to work in
 $git checkout {{your branch name assigned by instructor}}
 
 - [] logon to their automation pipeline.
