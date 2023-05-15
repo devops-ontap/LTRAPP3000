@@ -1,8 +1,8 @@
-Markup :  #### AWS SDWAN Deployment ####
+#### AWS SDWAN Deployment ####
 
 
 
-Markup :  #### Each Participant will Complete the Below Steps ####
+#### Each Participant will Complete the Below Steps ####
 - [] deploy thethe AWS Cloud Underlay and SDWAN instances with the base configuration via automation pipeline.
 - [] learn how to perform required manual steps in the SDWAN Vmanage GUI that have been decoupled from the CLI.
 - [] learn how to test/verify traffic flow 
@@ -11,7 +11,7 @@ Markup :  #### Each Participant will Complete the Below Steps ####
 
 
 
-Students will perform the following steps upon entering lab:
+#### Students will perform the following steps upon entering lab: ####
 
 - [] Open Intellij IDE and Terminal
 - [] Open the LTRAPP3000 directory (The lab participant will have full access to this directory for lab work and git)
@@ -28,11 +28,11 @@ $git checkout {{your branch name assigned by instructor}}
 
 - [] logon to their automation pipeline.
 
-- Instructor will provide the logon creds day of lab.
+#### Instructor will provide the logon creds day of lab ####
 Example:
 fly --target=prod-main login --concourse-url=http://prod-ci.devops-ontap.com:8080 -n {{participant team name}} --username={{username}} --password={{password}}
 
-Participants pipeline will be in a paused state. 
+#### Participants pipeline will be in a paused state #### 
 *****WAIT before un-pausing pipeline to verify code in your repo by Instructor*****
 
 
