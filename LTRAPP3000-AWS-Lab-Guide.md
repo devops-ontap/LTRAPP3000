@@ -25,6 +25,10 @@ you will be able to do so simply by going to the 'login' tab and pressing the ar
 - [] git push
 - [] git log
 
+#### you will be resetting your pipeline after making design changes via the 'pipes' tab simply by pressing the arrow up key and then the enter key ####
+Example:
+fly -t {{your team name}} set-pipeline -c {{the full path to your pipeline.yml file}} -p {{your pipeline name}} -l {{the full path to the parameters file - supplied day of lab due to security reasons}}
+
 - [] Open the LTRAPP3000 directory (The lab participant will have full access to this directory for lab work and git)
 - [] Open the above directory via Terminal
 - [] $cd LTRAPP3000
