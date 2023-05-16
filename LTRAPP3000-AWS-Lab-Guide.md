@@ -14,18 +14,28 @@
 #### Students will perform the following steps upon entering lab: ####
 
 - [] Open Intellij IDE and Terminal
+- [] Open the following new tabs in the Intellij Terminal: login, pipes, git, vmanage, vbond, vsmart, vedge, keys
+
+#### The login to the lab will time out after a few minutes of inactivity so after breaks you will need to log back in ####
+you will be able to do so simply by going to the 'login' tab and pressing the arrow up key and the enter key on your keyboard
+
+#### you will be performing a number of git commands and you may just arrow up in the git tab instead of re-typing these commands repeatedly: ####
+- [] git add filename
+- [] git commit {{"refactoring"}}
+- [] git push
+- [] git log
+
 - [] Open the LTRAPP3000 directory (The lab participant will have full access to this directory for lab work and git)
 - [] Open the above directory via Terminal
-$cd LTRAPP3000
+- [] $cd LTRAPP3000
 - [] Create a directory
-$mkdir lab-keys
+- [] $mkdir lab-keys
 - [] exist out of this directory to the root of LTRAPP300 dir
-$cd ../
+- [] $cd ../
 - [] Clone git repo (instructor will provide repo link to participants)
-$git clone git@github.com:devops-ontap/sdwan.git --config core.sshCommand="ssh -i ~/.ssh/sconrod-tester"
+- [] $git clone git@github.com:devops-ontap/sdwan.git --config core.sshCommand="ssh -i ~/.ssh/sconrod-tester"
 - [] Checkout Branch - Instructor will assign you a pre-provisioned branch to work in
-$git checkout {{your branch name assigned by instructor}}
-
+- [] $git checkout {{your branch name assigned by instructor}}
 - [] logon to their automation pipeline.
 
 #### Instructor will provide the logon creds day of lab ####
