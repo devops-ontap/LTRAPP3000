@@ -9,7 +9,13 @@
 - [] learn how to generate and install an Enterprise CA and certificate
 - [] Configure Cisco SMART Licensing for the Smart Account and Virtual Accounts for multi-tenancy and virtual accounts and onboard CAT8KV
 
+#### The following has been pre-configured in DNS and Software.Cisco.com for the purpose of this lab to simulate licensing for a MSP Partner
 
+- []  Smart Account: devops-ontap.com
+- []  Profile Name: MSP-SDWAN-DEVOPS
+- [] PRIMARY vbond name: vbond-msp.devops-ontap.com
+- [] Organization name: MSP-SDWAN-DEVOPS
+- [] Controller Type: vbond
 
 #### Students will perform the following steps upon entering lab: ####
 
