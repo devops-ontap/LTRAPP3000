@@ -54,7 +54,7 @@ Learning Challenges #1 - 15 min
 Learning Challenge #2 - 15 min
 ==============================
 - [] Create a new task to deploy another vmanage server using the code via your pipeline - first use an automation task. When it succeeds, add it to your pipeline and deploy again.
-
+- [] Add the new vmanage servers to your SDWAN (you may use GUI if your code doesn't work)
 
 Summary 
 ======
