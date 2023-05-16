@@ -42,7 +42,7 @@ Important Note
 - [] The Instructor will demonstrate a few techniques to verify via CLI that the Cloud Provider Underlay is functioning as desired
 - [] The Instructor will perform a code review prior to you starting work.
 
-Learning Challenges #1
+Learning Challenges #1 - 15 min
 =======================
 - [] There would not be a learning opportunity if the Participants simply started the automation code pipeline and the SDWAN deployed. 
 - [] Therefore, the Instructor has introduced one failure into the Cloud Underlay Deployment. 
@@ -50,6 +50,11 @@ Learning Challenges #1
 - [] Participants will be instructed to use an "Automation Task" to fix the issue.
 - [] The Instructor will provide hints and demonstrate how to run an automation task, following Best Practices for Agile Rapid Software Development.
 - [] Upon Completion of the challenge the AWS porition of the lab will be completed.
+
+Learning Challenge #2 - 15 min
+==============================
+- [] Create a new task to deploy another vmanage server using the code via your pipeline - first use an automation task. When it succeeds, add it to your pipeline and deploy again.
+
 
 Summary 
 ======
