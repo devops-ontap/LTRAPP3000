@@ -8,6 +8,11 @@ To save time, the Instructor has already uploaded the Cisco SDWAN VHDs to the cl
 - [] convert the VHD to AMI 
 - [] copy the AMI to each region where it will be deployed
 
+Since there are simple tasks, and since they are only performed when  new VHD is released with a new SDWAN version, 
+They have not been added into the automation for this lab due to time constraints. 
+The will be added in however at a later date and in the meantime can be found in the lab repo path here:
+devops-ontap/sdwan/test-tasks/aws_deploy_ami_s3/input/aws_deploy_ami.py
+
 #### Each Participant will Complete the Below Steps ####
 - [] deploy thethe AWS Cloud Underlay and SDWAN instances with the base configuration via automation pipeline.
 - [] learn how to perform required manual steps in the SDWAN Vmanage GUI that have been decoupled from the CLI.
