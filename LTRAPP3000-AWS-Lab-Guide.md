@@ -2,16 +2,28 @@
 Introduction
 =============
 
+Instructor will explain the architecture of the devops rig and after all SDWANs have been deployed can go into great detail on this config
+=========
+- [] Instructor will deliver high level verbal explanation and provide diagram over view of devops rig
+- [] Instructor will explain lab workflow and how it follows standard rapid iteration techniques of Devops Engineers and the red green process of the Software Development Lifecyle process
+- [] Instructor will give real world examples of using this architecture in devops and netops organization and the historical evolution of this rig and process
+- [] Participants are encouraged to take notes in their notes.md file in their git branch
+
 To save time, the Instructor has already uploaded the Cisco SDWAN VHDs to the cloud provider and converted VHD convertion process is:
 - [] uplaod the vmanage, vbond, vedge VHD to AWS S3
 - [] take a snapshot of the VHD
 - [] convert the VHD to AMI 
 - [] copy the AMI to each region where it will be deployed
 
-Since there are simple tasks, and since they are only performed when  new VHD is released with a new SDWAN version 
+Since these are simple tasks, and since they are only performed when  new VHD is released with a new SDWAN version 
 They have not been added into the automation for this lab due to time constraints. 
 The will be added in however at a later date and in the meantime can be found in the lab repo path here:
 devops-ontap/sdwan/test-tasks/aws_deploy_ami_s3/input/aws_deploy_ami.py
+
+#### Points Worth Noting, Lab World Versus Real World ####
+Some simplications have been made to this lab to allow the Instructor to easily help any student.
+These will need to be modified before taking this to production in your own environment. 
+The instructor will go over these simplications - such as: EC2-Console Access is enabled on the instances for ease of Instructor to connect to different students envs when required to assist them
 
 #### Each Participant will Complete the Below Steps ####
 - [] deploy thethe AWS Cloud Underlay and SDWAN instances with the base configuration via automation pipeline.
