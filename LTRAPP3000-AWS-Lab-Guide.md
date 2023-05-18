@@ -90,6 +90,12 @@ Learning Challenge #2 - 15 min
 - [] Create a new task to deploy another vmanage server using the code via your pipeline - first use an automation task. When it succeeds, add it to your pipeline and deploy again.
 - [] Add the new vmanage servers to your SDWAN (you may use GUI if your code doesn't work)
 
+Learning Challenge #3 - 15 min
+==============
+- [] Setup an Enterprise CA and install on vmanage, all instances, then upload the license file.
+- [] Read and Perform Follow Steps in the following doc in the repo(replacing values in {{}}:
+- [] devops-ontap/sdwan/enterprise-cert-steps.md
+
 Summary 
 ======
 Instructor will provide a verbal recap of all steps completed.
