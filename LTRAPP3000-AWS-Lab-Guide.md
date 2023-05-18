@@ -8,7 +8,7 @@ To save time, the Instructor has already uploaded the Cisco SDWAN VHDs to the cl
 - [] convert the VHD to AMI 
 - [] copy the AMI to each region where it will be deployed
 
-Since there are simple tasks, and since they are only performed when  new VHD is released with a new SDWAN version, 
+Since there are simple tasks, and since they are only performed when  new VHD is released with a new SDWAN version 
 They have not been added into the automation for this lab due to time constraints. 
 The will be added in however at a later date and in the meantime can be found in the lab repo path here:
 devops-ontap/sdwan/test-tasks/aws_deploy_ami_s3/input/aws_deploy_ami.py
@@ -75,6 +75,9 @@ Important Note
 
 Learning Challenges #1 - 15 min
 =======================
+Preparation: Read the following article: https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-security-groups.html
+===========================
+
 - [] There would not be a learning opportunity if the Participants simply started the automation code pipeline and the SDWAN deployed. 
 - [] Therefore, the Instructor has introduced one failure into the Cloud Underlay Deployment. 
 - [] Participants will be challenged to discover the issue, then there will be a short discussion as to the underlying cause of the issue and how to remediate the problem.
