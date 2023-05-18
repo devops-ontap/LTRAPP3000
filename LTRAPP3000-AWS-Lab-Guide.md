@@ -119,6 +119,14 @@ AWS VPC, route tables, security groups and rules, internet gateway, elastic ips,
 subnets as well as secondary disk deployment and application of user data file, as well as Enterprise ROOT CA installation and have added at least one Tenant to their 
 SDWAN multi-tenancy. Participants will also understand how to configure Cisco Software Licensing SMART and Virtual accounts for multi-tenancy.
 
+Notes
+========
 
+domain: devops-ontap.com
+cluster id: cluster
+org name:
+sp name:
 
+Before a vmanage node can be added to teh cluster, you must logon to the gui and set the
+org name, and the vbond dns name as well as install the cert and cert chain
 
