@@ -121,12 +121,14 @@ SDWAN multi-tenancy. Participants will also understand how to configure Cisco So
 
 Notes
 ========
-
+vbond: vbond.devops-ontap.com
 domain: devops-ontap.com
 cluster id: cluster
-org name:
-sp name:
+org name: devops-ontap.com
+sp name: devops-ontap.com
 
-Before a vmanage node can be added to teh cluster, you must logon to the gui and set the
-org name, and the vbond dns name as well as install the cert and cert chain
+Import Step after Auto-Config in pipeline of all vmanage, there are settings in the GUI that are decoupled that must be repeated before adding all nodes to cluster
+==========
+- [] Before a vmanage node can be added to teh cluster, you must logon to the gui and set the
+- [] org name, and the vbond dns name as well as install the cert and cert chain
 
