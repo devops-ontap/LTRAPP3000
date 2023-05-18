@@ -133,3 +133,16 @@ Import Step after Auto-Config in pipeline of all vmanage, there are settings in 
 - [] org name, and the vbond dns name as well as install the cert and cert chain
 - [] its only possible to add one node into the cluster at a time as each time you add a node the services restart and its the equivalent to a full restart
 - [] make sure you are not logged on via SSH to the vmanage nodes when you add them to the cluster
+- [] CSRs/Generation and CRTs need to be installed after all nodes are added to cluster. 
+
+vbond, vsmart ENI indexes
+==========================
+
+It is critical to have a pipeline to test new AMIS which are the new versions of SDWAN.
+From time to time, the indexes on the VHDs will change. 
+Currently in this version, the vmanage index0 comes up on VPN0, however vbond, vsmart, vedge, all come up with vpn512/mgmt comes up on eth0 and the ge0/0 comes up 
+on index_1 on the public subnet. Therefore, the only way to connect to these initially when using SSH the first time is on the 512 - so it needs to have an EIP
+This is very interesting and unusual.
+
+
+
