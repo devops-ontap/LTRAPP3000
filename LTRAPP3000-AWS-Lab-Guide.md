@@ -1,6 +1,12 @@
 #### AWS SDWAN Deployment ####
+Introduction
+=============
 
-
+To save time, the Instructor has already uploaded the Cisco SDWAN VHDs to the cloud provider and converted VHD convertion process is:
+- [] uplaod the vmanage, vbond, vedge VHD to AWS S3
+- [] take a snapshot of the VHD
+- [] convert the VHD to AMI 
+- [] copy the AMI to each region where it will be deployed
 
 #### Each Participant will Complete the Below Steps ####
 - [] deploy thethe AWS Cloud Underlay and SDWAN instances with the base configuration via automation pipeline.
