@@ -144,5 +144,16 @@ Currently in this version, the vmanage index0 comes up on VPN0, however vbond, v
 on index_1 on the public subnet. Therefore, the only way to connect to these initially when using SSH the first time is on the 512 - so it needs to have an EIP
 This is very interesting and unusual.
 
+Grand Prize Challenge
+===================
+
+- [] After all cloud underlays and SDWANs are deployed, deploy a second vedge to any cloud and onboard it to a vmanage in a different cloud
+- Use an automation task, push to your branch after you have it working
+
+Bonus Points
+========
+#### If you are a rocket scientist and Devops Pro this one is for you! ####
+- [] Deploy your second vedge in each cloud to different cloud sdwans.
+
 
 
