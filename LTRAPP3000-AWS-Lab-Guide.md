@@ -35,9 +35,9 @@ The instructor will go over these simplications - such as: EC2-Console Access is
 #### The following has been pre-configured in DNS and Software.Cisco.com for the purpose of this lab to simulate licensing for a MSP Partner
 
 - []  Smart Account: devops-ontap.com
-- []  Profile Name: MSP-SDWAN-DEVOPS
-- [] PRIMARY vbond name: vbond-msp.devops-ontap.com
-- [] Organization name: MSP-SDWAN-DEVOPS
+- []  Profile Name: vbond.devops-ontap.com
+- [] PRIMARY vbond name: vbond.devops-ontap.com
+- [] Organization name: vbond.devops-ontap.com
 - [] Controller Type: vbond
 
 #### Students will perform the following steps upon entering lab: ####
@@ -84,6 +84,43 @@ Important Note
 - [] The Instructor will demonstrate all  steps before Participants being steps. Please watch Instructor Demo and take notes if required before starting lab work.
 - [] The Instructor will demonstrate a few techniques to verify via CLI that the Cloud Provider Underlay is functioning as desired
 - [] The Instructor will perform a code review prior to you starting work.
+
+Pipeline Phase 1
+==================
+
+The pipeline will deploy the cloud underlay, the vmanage, vbond, vsmart, vedge instances and configure them
+
+GUI Steps - steps uncoupled from API and CLI
+=============
+- [] reset password on gui to admin1 - do this on all three vmanage machines
+- [] Administration, Settings - select multi-tenancy and reboot - on the first vmanage machine only 
+- [] Administration, Settings, SP Organization, vBond, Controller Certificate Authority(instructor will demo how to create this and update gui) - first vmanage machine only.
+- [] Follow Steps in the Document devops-ontap/sdwan/enterprise-cert-steps.md 
+- [] vmanage_2 and vmanage_3 repeat steps:
+
+from vshell on vmanage_2 and vmanage_3:
+
+- [] scp admin@{{vmanage_1 ip}}:/home/admin/ROOT-CA.pem .
+- [] request root-cert-chain install /home/admin/ROOT-CA.pem
+
+from vmanage_1 GUI
+==========
+-[] select Administration, Cluster Management, select the 3 dots beside vmanage_1, and select edit. From the vManage IP Address dropdown select the cluster ip
+- [] services will restart on vmanage again. This can take 3-5 minutes.
+- [] add vmanage_2 by the cluster IP, wait for services to restart
+- [] add vmanage_3 by the cluster IP, wait for services to start
+
+-[] select the three bars right top of Administration - Cluster Management to watch the progress of the cluster
+
+-[] install the ROOT-CA.PEM and cert chain on vbonds and vsmarts as well as vedge.
+-[] once the ROOT-CA.pem is installed on all instances along with the chain, add each of vbonds, vsmarts to vmanage gui.
+-[] select on vmanage, Configuration, Devices, Controllers. Add in all vbonds, vsmarts
+-[] a CSR is sent to each machine. SCP all CSRs to the vmanage and create the CRTs. Paste the CRTs into the GUI except for vedge, send the CRT 
+back to vedge as we do not install the vedge cert in the GUI but rather via the requests command on the vedge device.
+
+- [] run commands to verify cluster is sync'd
+- [] in order to put the vbonds and vsmarts in vmanage mode you need to apply a template. A CLI template will work - 
+- [] add Tenant, example aspadescisco - Select Administration, Tenant Management, Add Tenant. Complete the form and select both vSmarts
 
 Learning Challenges #1 - 15 min
 =======================
@@ -156,4 +193,9 @@ Bonus Points
 - [] Deploy your second vedge in each cloud to different cloud sdwans.
 
 
+Additional Resources and Learning Materials
+========
 
+SDWAN Smart Licensing 
+=======
+https://www.cisco.com/c/dam/en_us/services/downloads/SD-WAN_pnp_support_guide.pdf
