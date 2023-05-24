@@ -2,9 +2,9 @@
 Introduction
 =============
 
-Instructor will explain the architecture of the devops rig and after all SDWANs have been deployed can go into great detail on this config
+LAB WORKFLOW
 =========
-- [] Instructor will deliver high level verbal explanation and provide diagram over view of devops rig
+- [] Instructor will deliver high level verbal explanation do live demo of approximatelly 5 steps at a time before Participants should repeat the steps.
 - [] Instructor will explain lab workflow and how it follows standard rapid iteration techniques of Devops Engineers and the red green process of the Software Development Lifecyle process
 - [] Instructor will give real world examples of using this architecture in devops and netops organization and the historical evolution of this rig and process
 - [] Participants are encouraged to take notes in their notes.md file in their git branch
@@ -34,11 +34,19 @@ The instructor will go over these simplications - such as: EC2-Console Access is
 
 #### The following has been pre-configured in DNS and Software.Cisco.com for the purpose of this lab to simulate licensing for a MSP Partner
 
+
+PRIMARY SMART ACCOUNT CONFIG FOR CLUSTER - SERVICE PROVIDER - MSP
+=======
 - []  Smart Account: devops-ontap.com
 - []  Profile Name: vbond.devops-ontap.com
 - [] PRIMARY vbond name: vbond.devops-ontap.com
 - [] Organization name: vbond.devops-ontap.com
 - [] Controller Type: vbond
+
+TENANT 
+=======
+SP = devops-ontap.com
+org = devops-ontap.com-TENANT
 
 #### Students will perform the following steps upon entering lab: ####
 
@@ -92,23 +100,32 @@ The pipeline will deploy the cloud underlay, the vmanage, vbond, vsmart, vedge i
 
 GUI Steps - steps uncoupled from API and CLI
 =============
-- [] reset password on gui to admin1 - do this on all three vmanage machines
-- [] Administration, Settings - select multi-tenancy and reboot - on the first vmanage machine only 
-- [] Administration, Settings, SP Organization, vBond, then go to Administratin, Cluster and select the cluster IP and save. Services will restart again.
+- [] on the first vmanage only, enable multi-tenancy and reboot. After reboot, set the SP Name, Org Name, Vbond. 
+- [] before you can set up the cluster, you must change the password via GUI and set the Org Name and the Vbond DNS
+- [] Lab Students will not have have access to route 53 DNS so they will need to create a host file entry with both VBOND internal and external IPs on each machine.
+
+Configure the Cluster
+===================
+- [] On vmanage_1 Administration, Settings, SP Organization, vBond, then go to Administratin, Cluster and select the cluster IP and save. Services will restart again. Each restart wil take about 5 min or more.
+- [] you can check when the vmanage_1 will be ready to add another cluster node, by running netcat on SSL
 - []Controller Certificate Authority(instructor will demo how to create this and update gui) - first vmanage machine only.
 - [] Follow Steps in the Document devops-ontap/sdwan/enterprise-cert-steps.md 
 
 
 
-from vmanage_1 GUI
+from vmanage_1 GUI ADD CLUSTER NODES
 ==========
--[] select Administration, Cluster Management, select the 3 dots beside vmanage_1, and select edit. From the vManage IP Address dropdown select the cluster ip
+- [] update DNS with the external and internal IPs of the vbond
+- [] select Administration, Cluster Management, select the 3 dots beside vmanage_1, and select edit. From the vManage IP Address dropdown select the cluster ip
 - [] services will restart on vmanage again. This can take 3-5 minutes.
 - [] add vmanage_2 by the cluster IP, wait for services to restart
 - [] add vmanage_3 by the cluster IP, wait for services to start
+- [] select the three bars right top of Administration - Cluster Management to watch the progress of the cluster
+- [] you will see configure status in state pending, wait until Configure Status says pending. 
 
--[] select the three bars right top of Administration - Cluster Management to watch the progress of the cluster
 
+Enterprise Certificate Installation
+=============
 -[] install the ROOT-CA.PEM and cert chain on vbonds and vsmarts as well as vedge.
 -[] once the ROOT-CA.pem is installed on all instances along with the chain, add each of vbonds, vsmarts to vmanage gui.
 -[] select on vmanage, Configuration, Devices, Controllers. Add in all vbonds, vsmarts
@@ -116,8 +133,21 @@ from vmanage_1 GUI
 back to vedge as we do not install the vedge cert in the GUI but rather via the requests command on the vedge device.
 
 - [] run commands to verify cluster is sync'd
-- [] in order to put the vbonds and vsmarts in vmanage mode you need to apply a template. A CLI template will work - 
+- [] Create a template for vmanage_2 and vmangae_3 and ensure allow service netconf and apply - this will put them in vmanage mode
+- [] change the mode for the vmanage to vmanage mode via Configuration>Devices>Change Mode
+- [] in order to put the vbonds and vsmarts in vmanage mode you need to apply a template. A CLI template will work - this will only work from Configuration>Devices>Change Mode
 - [] add Tenant, example aspadescisco - Select Administration, Tenant Management, Add Tenant. Complete the form and select both vSmarts
+- [] double check tenant name, org name etc if any mistakes it will fail, these are also required upon installation of crt to edge devices
+- [] logon to tenant, select Configuration, Devices, Upload WAN Edge List, upload the .viptela license file. Select to validate the list and send to controllers.
+- [] wait for the vedge list to be successfull pushed to all controllers.
+
+Deploy Edge Device
+====
+
+for virtual devices, you must create a boostrap config and paste that into the userdata file for aws before you deploy it. This includes the virtual
+chassis number and OTP or token.
+
+
 
 Learning Challenges #1 - 15 min
 =======================
