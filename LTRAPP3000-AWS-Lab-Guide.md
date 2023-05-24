@@ -94,14 +94,11 @@ GUI Steps - steps uncoupled from API and CLI
 =============
 - [] reset password on gui to admin1 - do this on all three vmanage machines
 - [] Administration, Settings - select multi-tenancy and reboot - on the first vmanage machine only 
-- [] Administration, Settings, SP Organization, vBond, Controller Certificate Authority(instructor will demo how to create this and update gui) - first vmanage machine only.
+- [] Administration, Settings, SP Organization, vBond, then go to Administratin, Cluster and select the cluster IP and save. Services will restart again.
+- []Controller Certificate Authority(instructor will demo how to create this and update gui) - first vmanage machine only.
 - [] Follow Steps in the Document devops-ontap/sdwan/enterprise-cert-steps.md 
-- [] vmanage_2 and vmanage_3 repeat steps:
 
-from vshell on vmanage_2 and vmanage_3:
 
-- [] scp admin@{{vmanage_1 ip}}:/home/admin/ROOT-CA.pem .
-- [] request root-cert-chain install /home/admin/ROOT-CA.pem
 
 from vmanage_1 GUI
 ==========
