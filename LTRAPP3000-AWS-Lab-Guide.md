@@ -2,6 +2,15 @@
 Introduction
 =============
 
+Points
+======
+Before vmanage_2 and vmanage_3 can be added to the cluster, it is necessary to logon via GUI and reset pword
+Its only possible to add one vmanage into cluster at a time then everything reboots multiple times and can take 5-10 min
+
+
+
+
+
 LAB WORKFLOW
 =========
 - [] Instructor will deliver high level verbal explanation do live demo of approximatelly 5 steps at a time before Participants should repeat the steps.
